@@ -1,3 +1,5 @@
-export type GreetingProps = {
-  name: string;
+export type Todo = {
+  id: number;
+  text: string;
+  isDone: boolean;
 };
