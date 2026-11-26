@@ -1,5 +1,5 @@
-export type Todo = {
+export type Product = {
   id: number;
-  text: string;
-  isDone: boolean;
+  name: string;
+  price: number;
 };
