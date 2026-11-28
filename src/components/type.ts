@@ -1,5 +1,6 @@
-export type Product = {
+export type Task = {
   id: number;
-  name: string;
-  price: number;
+  title: string;
+  done: boolean;
+  priority: "low" | "medium" | "high";
 };
