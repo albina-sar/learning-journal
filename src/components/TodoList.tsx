@@ -43,17 +43,19 @@ function TodoList() {
     };
     setTasks((prev) => [...prev, newTask]);
     setText("");
+    setPriority('low')
   };
 
   const handleReset = () => {
-    setTasks((prev) => prev.filter((task) => task.done === false));
+    setTasks((prev) => prev.filter((task) => !task.done));
   };
 
+  const doneTasks = tasks.filter((task) => task.done)
   return (
     <div className={styles.container}>
       <h2>Список дел 📜</h2>
       {tasks.length === 0 ? (
-        <p>"Нет задач. Добавьте первую! 🎯"</p>
+        <p>Нет задач. Добавьте первую! 🎯</p>
       ) : (
         tasks.map((t) => (
           <li
@@ -69,7 +71,7 @@ function TodoList() {
                     : "red",
             }}
           >
-            <input type="checkbox" onChange={() => handleToggle(t.id)} />
+            <input type="checkbox" onChange={() => handleToggle(t.id)} checked={t.done}/>
             {t.title} {t.priority}
             <button
               className={styles.liButton}
@@ -83,7 +85,7 @@ function TodoList() {
       <button className={styles.resetButton} onClick={handleReset}>
         Очистить выполненные
       </button>
-      <p>Выполнено задач: ? из {tasks.length}</p>
+      <p>Выполнено задач: {doneTasks.length} из {tasks.length}</p>
       <div className={styles.addButton}>
         <input
           type="text"
@@ -93,8 +95,7 @@ function TodoList() {
           className={styles.input}
         />
         <select
-          name="Приоритет"
-          id=""
+          name="Priority"
           value={priority}
           onChange={handleChangeSelect}
           className={styles.select}

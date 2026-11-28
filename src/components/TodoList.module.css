@@ -12,7 +12,7 @@
   color: white;
   border-radius: 6px;
   cursor: pointer;
-  border: "none";
+  border: none;
   font-size: 16px;
   align-self: flex-start;
 }
@@ -40,6 +40,7 @@
 .liButton {
   border-radius: 2px;
   cursor: pointer;
+  border: none;
 }
 
 .resetButton {
@@ -48,7 +49,6 @@
   color: white;
   border-radius: 6px;
   cursor: pointer;
-  border: "none";
+  border: none;
   font-size: 16px;
-  
 }
