@@ -58,7 +58,7 @@ function TodoList() {
         <p>Нет задач. Добавьте первую! 🎯</p>
       ) : (
         tasks.map((t) => (
-          <li
+          <ul><li
             key={t.id}
             className={styles.li}
             style={{
@@ -79,7 +79,7 @@ function TodoList() {
             >
               ❌
             </button>
-          </li>
+          </li></ul>
         ))
       )}
       <button className={styles.resetButton} onClick={handleReset}>
